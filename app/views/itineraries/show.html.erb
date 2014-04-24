@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @itinerary.entry %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @itinerary.image_url %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @itinerary.address %>
+</p>
+
+<p>
+  <strong>Hint:</strong>
+  <% @itinerary.hints.each do |hint| %>
+ 	<p>
+ 		<%= hint.entry %> | 
+ 		<%= link_to "Edit hint", edit_itinerary_hint_path(@itinerary, hint) %>
+ 	</p> 
+  <% end %>
+</p>
+
+
+
+<%= link_to 'Edit itinerary', edit_itinerary_path(@itinerary) %> |
+<%= link_to 'Back', itineraries_path %>

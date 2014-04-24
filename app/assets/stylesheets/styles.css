@@ -1,0 +1,233 @@
+/*
+
+My Custom CSS
+=============
+
+Author:  Brad Hussey
+Updated: August 2013
+Notes:	 Hand coded for Udemy.com
+
+*/
+
+
+/* --------------------------------------
+   Layout
+   -------------------------------------- */
+
+.diamondSection a {
+    color: #000;
+    background: url("../../images/diamond-score.png") no-repeat;
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    text-indent: -9999px;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.diamondSection a:hover {
+    background: url("../../images/diamond-score-hover.png") no-repeat;
+    color: #ff5500;
+    text-decoration: none;
+}
+
+.diamondScore {
+    margin: 0;
+    padding: 0;
+    width: 60px;
+    height: 70px;
+    text-align: center;
+    text-indent: 0;
+}
+
+/* --------------------------------------
+   Typography
+   -------------------------------------- */
+
+body {
+
+    padding-top: 60px;
+    font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Hoefler Text", "Times New Roman", serif;
+    font-size: 16px;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Baskerville, Garamond, Palatino, "Palatino Linotype", "Hoefler Text", "Times New Roman", serif;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+
+.mainHeading {
+    color:  #000;
+    border-bottom: 1px solid #a9a9a0;
+}
+
+.mainHeading:hover {
+    color: #ff5500;
+    text-decoration: none;
+    border-bottom: 1px solid #ff5500;
+}
+
+
+/* --------------------------------------
+   Navbar
+   -------------------------------------- */
+
+#searchInput {
+    width: 200px;
+}
+
+.navbar-brand {
+    padding: 13px 15px;
+}
+
+.navbar {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+/* --------------------------------------
+   Travel Tips Section
+   -------------------------------------- */
+
+.hintsTips-first {
+    border-top: #a1a1a1 dotted 1px;
+}
+
+.hintsTips {
+    border-bottom: #a1a1a1 dotted 1px;
+}
+
+.hintsTips  p {
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.scoreTip {
+    padding: 0 10px;
+    font-weight: bold;
+    color: #888;
+}
+
+.tipsHeader-container {
+
+}
+
+.tipsHeader {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.addTip-button {
+    margin-top: 6px;
+    padding: 2px 3px 0;
+    background: none;
+    font-size: 14px;
+    color: #888;
+}
+
+.addTip-button:hover {
+    background-color: #777777;
+    color: #fff;
+    font-weight: 400;
+}
+
+tr:hover td {
+    background-color: #fafafa;
+}
+
+.showMore-button a {
+    font-size: 14px;
+    color: #888;
+}
+
+.showMore-button a:hover {
+    background-color: #777777;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    padding: 0 3px;
+}
+
+
+
+/* --------------------------------------
+   Location Panels
+   -------------------------------------- */
+
+.itineraryTitle a {
+    color:  #000;
+    border-bottom: 1px solid #a9a9a0;
+}
+
+.itineraryTitle a:hover {
+    color: #ff5500;
+    text-decoration: none;
+    border-bottom: 1px solid #ff5500;
+}
+
+.itineraryTitle h4 {
+    font-size: 20px;
+    border-bottom: 1px solid #a9a9a0;
+    padding-bottom: 1px;
+}
+
+.itineraryTitle h4:hover {
+    border-bottom: 1px solid #ff5500;
+}
+
+.itineraryScore h4 {
+    text-align: center;
+    color: #ff5500;
+}
+
+.itineraryDuration h5 {
+    text-align: center;
+}
+
+.itineraryAddress {
+    color: #777777;
+}
+
+/* --------------------------------------
+   Media Queries
+   -------------------------------------- */
+
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+
+    body {
+        padding: 0;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 990px) {
+
+    body {
+        padding-top: 110px;
+    }
+
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+
+
+}

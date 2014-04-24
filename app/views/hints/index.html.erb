@@ -1,0 +1,13 @@
+
+<% @hints.each do |hint| %>
+	<ul>
+		<li>
+			<%= hint.entry %> |
+			<%= link_to 'Edit hint', edit_itinerary_hint_path(@itinerary, hint) %>
+
+		</li>
+	</ul>
+<% end %>
+
+<%= link_to 'Add new hint!', new_itinerary_hint_path(@itinerary) %>
+
