@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Itinerary.create!(
-	[{image_url: "image1.jpg", user_id: 1, address: "Rua Pamplona, 795 - Jardim Paulista, São Paulo - SP, 01405-001, Brazil", day: 1,
+	[{title: "Samba Saturdays at O do Borogodo",image_url: "image1.jpg", user_id: 1, address: "Rua Pamplona, 795 - Jardim Paulista, São Paulo - SP, 01405-001, Brazil",
 		entry: "Bushwick sriracha locavore, raw denim Wes Anderson jean shorts mixtape messenger bag Marfa seitan pour-over YOLO 8-bit."},
-		{image_url: "image1.jpg", user_id: 2, address: 'Musgrave St, Coolanagatta', day: 2,
+		{title: "PGPPP in Cooly", image_url: "image1.jpg", user_id: 2, address: 'Musgrave St, Coolanagatta',
 			entry: "Onset of depression was about 2 weeks ago.  No stressor was able to be identified.  He started drinking progressively increasing amounts of alcohol everyday in public spaces like public toilets and shopping centres as he didn’t want to be drinking around his dad.  He quit his job as an assistant nurse which he had only been working for 2 weeks."}
 			])
 

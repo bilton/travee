@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423094628) do
+ActiveRecord::Schema.define(version: 20140425230916) do
 
   create_table "event_votes", force: true do |t|
     t.integer  "itinerary_id"
@@ -44,14 +44,12 @@ ActiveRecord::Schema.define(version: 20140423094628) do
 
   create_table "itineraries", force: true do |t|
     t.text     "entry"
-    t.string   "author"
     t.string   "image_url"
-    t.integer  "vote"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "day"
     t.string   "address"
+    t.string   "title"
   end
 
   create_table "users", force: true do |t|

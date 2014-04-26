@@ -1,7 +1,7 @@
 <div class="container" id="main"> 
   <div class="navbar navbar-fixed-top">
 
-    <div class="container">
+    <!-- div class="container" -->
 
                 <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
                     <span class="icon-bar"></span>
@@ -58,7 +58,7 @@
                     </ul>
 
                 </div><!-- end nav-collapse -->
-    </div> <!-- end container -->
+    <!--/div --> <!-- end container -->
   </div> <!-- end navbar -->
 
         <!-- Itinerary Intro -->
@@ -83,6 +83,8 @@
                 <p class="lead">
                     Need to add new column for interary introduction
                 </p>
+
+                <%= link_to 'Add New Itinerary', new_itinerary_path %>
             </div>
         </div>
         <!-- end Itinerary Intro -->
@@ -111,13 +113,11 @@
                         </div>
                         <div class="col-sm-10">
 
-                            <div class="itineraryTitle">
-                                <a href="">
-                                    <h4 class="panel-title">Add column for title of each itinerary</h4>
-                                    <div class="itineraryAddress">
-                                        <%= itinerary.address %>
-                                    </div>
-                                </a>
+                            <div class="itineraryTitle">                               
+                                <h4 class="panel-title"><%= link_to itinerary.title, itinerary %></h4>
+                                <div class="itineraryAddress">
+                                    <%= itinerary.address %>
+                                </div>                               
                             </div>
 
                         </div>
@@ -134,8 +134,8 @@
                     </div>
                     <div class="col-sm-7">
                         <div class="tipsHeader-container">
-                            <p class="tipsHeader">Travel Tips <small>(6)</small></p>
-                            <button class="btn btn-small pull-right addTip-button" type="button"><span class="glyphicon glyphicon-pencil"></span>Add your tip!</button>
+                            <p class="tipsHeader">Travel Tips <small>(<%= itinerary.hints.size %>)</small></p>
+                            <%= button_to "Add your tip!", new_itinerary_hint_path(itinerary), method: :get, class: "btn btn-small pull-right addTip-button"  %>
                         </div>
 
                         <div class="container eachTip">
@@ -169,16 +169,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> <!-- end Itinerary List --> 
 
-        </div>
-        <!-- end Itinerary List -->        
-        
         <!-- ####################### END OF BLOCK -->
               <% end %>
+              
+        </div><!-- end container main -->
+               
+        
 
 
-</div> <!-- end container main -->
+
+ 
 
 
 <!-- 
@@ -206,12 +208,10 @@
           <td><%= button_to "Upvote", itinerary_event_votes_path(itinerary)  %></td>
         <% end %>
 
-        <td><%= itinerary.day %></td>
         <td><%= itinerary.address %></td>
         <td><%= itinerary.entry %></td>
         <td><%= itinerary.user.email %></td>
         <td><%= itinerary.image_url %></td>
-        <td><%= itinerary.vote %></td>
 
         <td>
           <ul>
