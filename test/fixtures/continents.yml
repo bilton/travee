@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asia_pacific: MyString
+  australia: MyString
+  europe: MyString
+  north_america: MyString
+  south_america: MyString
+
+two:
+  asia_pacific: MyString
+  australia: MyString
+  europe: MyString
+  north_america: MyString
+  south_america: MyString

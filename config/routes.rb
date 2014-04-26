@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   
 
+  resources :continents
+
+  resources :guides
+
   resources :users
 
   resources :itineraries do
