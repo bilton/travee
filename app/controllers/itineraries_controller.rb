@@ -7,6 +7,7 @@ class ItinerariesController < ApplicationController
   # GET /itineraries.json
   def index
     @itineraries = Itinerary.all
+    @continents = Continent.all
   end
 
   # GET /itineraries/1

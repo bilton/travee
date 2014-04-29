@@ -1,0 +1,115 @@
+       <!-- Itinerary Intro -->
+        <div class="row" id="itineraryIntro">
+
+            <div class="col-sm-1">
+
+                <div class="diamondSection">
+                    <a href="#">
+                        <h3>Diamond Picture</h3>
+                        <h3 class="diamondScore">145</h3>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="col-sm-11">
+                <h1><a href="#" class="mainHeading"><%= @guide.title %></a></h1>
+                <div class="itineraryInfo">
+                    <p>Submitted <%= time_ago_in_words(@guide.created_at) %> ago by Username </p>
+                </div>
+                <p class="lead">
+                    <%= @guide.intro %>
+                </p>
+
+                <%= link_to 'Add New Itinerary', new_itinerary_path %>
+            </div>
+        </div>
+        <!-- end Itinerary Intro -->
+
+        <!-- ####################### START OF BLOCK -->
+        <% @guide.itineraries.each do |itinerary| %>
+        <!-- Itinerary List -->
+        <div class="row" id="itineraryList">
+
+            <div class="col-sm-1" id="indent"></div>
+
+            <div class="col-sm-11 feature">
+                <div class="panel clearfix">
+                    <div class="panel-heading clearfix">
+                        <div class="col-sm-1">
+                            <div class="itineraryScore">
+                                <h4><%= itinerary.event_votes.size %></h4>
+                                <!-- ###################### vote for itinerary if statement #########################-->
+                                        <% if itinerary.event_votes.find_by(user: current_user) %>
+                                          <%= button_to "Downvote", itinerary_event_vote_path(itinerary.id, itinerary.event_votes.find_by!(user: current_user)), method: :delete %>
+                                        <% else %>
+                                          <%= button_to "Upvote", itinerary_event_votes_path(itinerary)  %>
+                                        <% end %>
+                                <!-- ###################### end of vote for itinerary if statement  #########################-->        
+                            </div>
+                        </div>
+                        <div class="col-sm-10">
+
+                            <div class="itineraryTitle">                               
+                                <h4 class="panel-title"><%= link_to itinerary.title, itinerary %></h4>
+                                <div class="itineraryAddress">
+                                    <%= itinerary.address %>
+                                </div>                               
+                            </div>
+
+                        </div>
+                        <div class="col-sm-1">
+                            <div class="itineraryDuration">
+                                <h5>4 hours (take it off??)</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="panelContent">
+                            <p><%= itinerary.entry %></p>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="tipsHeader-container">
+                            <p class="tipsHeader">Travel Tips <small>(<%= itinerary.hints.size %>)</small></p>
+                            <%= button_to "Add your tip!", new_itinerary_hint_path(itinerary), method: :get, class: "btn btn-small pull-right addTip-button"  %>
+                        </div>
+
+                        <div class="container eachTip">
+                            <div class="col-sm-12">
+
+                                    <table>
+                                        <tbody>
+                                          <!-- ##################### ITINERARY HINT BLOCK START -->
+                                          <% itinerary.hints.each do |hint| %>
+                                            <tr>
+                                                <td class="hintsTips hintsTips-first">
+                                                    <h5 class="pull-left scoreTip"><%= hint.hint_votes.size %></h5>
+                                                      <!-- ###################### vote for hint if statement #########################-->
+                                                      <% if hint.hint_votes.find_by(user: current_user) %>
+                                                        <%= button_to "DownVote", itinerary_hint_hint_vote_path(itinerary, hint, hint.hint_votes.find_by!(user: current_user)), method: :delete %>
+                                                      <% else %>
+                                                        <%= button_to "UpVote", itinerary_hint_hint_votes_path(itinerary, hint) %> 
+                                                      <% end %>
+                                                      <!-- ###################### end of vote for itinerary if statement #########################-->
+                                                    <p class=""><%= hint.entry %></p>
+                                                </td>
+                                            </tr>
+                                          <!-- ##################### ITINERARY HINT BLOCK END -->  
+                                          <% end %>
+                                          
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end Itinerary List --> 
+
+        <!-- ####################### END OF BLOCK -->
+              <% end %>
+              
+        </div><!-- end container main -->
+               

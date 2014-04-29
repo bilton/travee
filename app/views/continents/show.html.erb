@@ -1,0 +1,6 @@
+<% @continent.guides.each do |guide| %>
+	<ul>
+		<li><h1><%= link_to guide.title, guide %></h1> </li>
+		<li><%= truncate(guide.intro, length: 150)  %></li>
+	</ul>
+<% end %>

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140426214010) do
+ActiveRecord::Schema.define(version: 20140427073421) do
+
+  create_table "continents", force: true do |t|
+    t.string   "continent_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "event_votes", force: true do |t|
     t.integer  "itinerary_id"
@@ -28,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140426214010) do
     t.text     "intro"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "continent_id"
   end
 
   create_table "hint_votes", force: true do |t|

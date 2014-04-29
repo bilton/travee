@@ -1,0 +1,5 @@
+<%= form_for @continent do |c| %>
+	<%= c.label 'What continent?' %>
+	<%= c.select :continent_name, Continent::CONT, prompt: "Pick one" %> </br>
+	<%= c.submit %>
+<% end %>

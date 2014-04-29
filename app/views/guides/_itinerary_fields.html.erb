@@ -1,0 +1,14 @@
+   <fieldset>
+    <%= f.label :title %> 
+    <%= f.text_field :title %> <br/>
+    <%= f.label :entry, "Entry" %> 
+    <%= f.text_area :entry, cols: 100, rows: 5 %><br/>
+    <%= f.label :address, "Address here:" %> 
+    <%= f.text_field :address %><br/>
+    <%= f.label :image_url %> 
+    <%= f.text_field :image_url %> <br/>  
+
+    <%= f.fields_for :hints do |builder| %>
+        <%= render 'hint_fields', f: builder %>
+    <% end %>   
+  </fieldset>

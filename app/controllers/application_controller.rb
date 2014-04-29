@@ -27,6 +27,10 @@ class ApplicationController < ActionController::Base
   	current_user == user
   end
 
+  def load_continents
+    @continents = Continent.all
+  end
+
 
 
 end
